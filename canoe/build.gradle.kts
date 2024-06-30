@@ -22,6 +22,10 @@ android {
         vectorDrawables {
             useSupportLibrary = true
         }
+
+        val oauthRedirectParts = extra["OAUTH_REDIRECT_URL"].toString().split("://")
+        manifestPlaceholders["appAuthRedirectScheme"] = oauthRedirectParts[0]
+        manifestPlaceholders["appAuthRedirectHost"] = oauthRedirectParts[1]
     }
 
     buildTypes {
