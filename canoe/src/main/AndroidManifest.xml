@@ -31,8 +31,8 @@
                 <category android:name="android.intent.category.BROWSABLE" />
 
                 <data
-                    android:host="${appAuthRedirectHost}"
-                    android:scheme="${appAuthRedirectScheme}" />
+                    android:host="${appOAuthRedirectHost}"
+                    android:scheme="${appOAuthRedirectScheme}" />
             </intent-filter>
         </activity>
 
