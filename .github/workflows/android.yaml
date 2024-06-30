@@ -31,7 +31,7 @@ jobs:
       - name: Create secrets.properties
         env:
           DATA: ${{secrets.SECRETS_PROPERTIES}}
-        run: echo $DATA > /home/runner/work/Canoe/Canoe/secrets.properties
+        run: echo $DATA > secrets.properties
       - name: Download dependencies
         if: steps.cache.outputs.cache-hit != 'true'
         run: ./gradlew androidDependencies
@@ -70,11 +70,11 @@ jobs:
       - name: Create google-services.json
         env:
           DATA: ${{secrets.GOOGLE_SERVICES_JSON}}
-        run: echo $DATA > /home/runner/work/Canoe/Canoe/canoe/src/google-services.json
+        run: echo $DATA > canoe/google-services.json
       - name: Create secrets.properties
         env:
           DATA: ${{secrets.SECRETS_PROPERTIES}}
-        run: echo $DATA > /home/runner/work/Canoe/Canoe/secrets.properties
+        run: echo $DATA > secrets.properties
       - name: Download dependencies
         if: steps.cache.outputs.cache-hit != 'true'
         run: ./gradlew androidDependencies
@@ -112,11 +112,11 @@ jobs:
       - name: Create google-services.json
         env:
           DATA: ${{secrets.GOOGLE_SERVICES_JSON}}
-        run: echo $DATA > /home/runner/work/Canoe/Canoe/canoe/src/google-services.json
+        run: echo $DATA > canoe/google-services.json
       - name: Create secrets.properties
         env:
           DATA: ${{secrets.SECRETS_PROPERTIES}}
-        run: echo $DATA > /home/runner/work/Canoe/Canoe/secrets.properties
+        run: echo $DATA > secrets.properties
       - name: Download dependencies
         if: steps.cache.outputs.cache-hit != 'true'
         run: ./gradlew androidDependencies

@@ -23,9 +23,9 @@ android {
             useSupportLibrary = true
         }
 
-        val oauthRedirectParts = extra["OAUTH_REDIRECT_URL"].toString().split("://")
-        manifestPlaceholders["appOAuthRedirectScheme"] = oauthRedirectParts[0]
-        manifestPlaceholders["appOAuthRedirectHost"] = oauthRedirectParts[1].dropLastWhile { char -> char == '/' }
+        val (scheme, host) = extra["OAUTH_REDIRECT_URL"].toString().split("://")
+        manifestPlaceholders["appOAuthRedirectScheme"] = scheme
+        manifestPlaceholders["appOAuthRedirectHost"] = host.dropLastWhile { char -> char == '/' }
     }
 
     buildTypes {
